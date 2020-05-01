@@ -1,0 +1,83 @@
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int main()
+{   double userAnsw5;
+    double ranDbl3=((rand() % 10) + 1)*1.0;
+    double ranDbl2=((rand() % 10) + 1)*1.0;
+    int userAnsw4;
+    int randomInt3=(rand() % 100) + 1;
+int randomInt4=(rand() % 100) + 1;
+    double ranDbl1=(rand() % 10)*1.0;
+    int randomInt=(rand() % 25) + 65;
+    int randomLetter=(rand() % 25) + 65;
+    int userAnsw1;
+    char userAnsw2;
+    int userAnsw3;
+    char yesorno;
+    char userName[100];
+    int points=0;
+    int correct=0;
+    printf("What is your name?\n");
+scanf("%s",userName);
+printf("%s do you want to play a game?y/n\n",userName);
+scanf(" %c",&yesorno);
+if(yesorno=='y'){
+printf("What is the ASCII value (as an integer) of the letter [%c] ?\n", randomLetter);
+scanf("%d",&userAnsw1);
+if(userAnsw1==randomLetter){
+points=3;
+correct++;
+}
+printf("What character is represented by the integer [%d]?\n", randomInt);
+scanf(" %c",&userAnsw2);
+if(userAnsw2==randomInt){
+    points=points+3;
+    correct++;
+
+}
+printf("Round the following double value [%lf]\n", ranDbl1);//need bool to compare double
+scanf(" %d",&userAnsw3);
+if(userAnsw3==(ranDbl1*1)){
+    points= points+2;
+    correct++;
+
+}
+printf("Use integer division to answer the following: [%d] / [%d]\n",randomInt3,randomInt4);
+scanf(" %d",&userAnsw4);
+if(userAnsw4== (randomInt3/randomInt4)){
+    points= points+1;
+    correct++;
+
+}
+printf("Use standard division to answer the following:[%lf] / [%lf]\n",ranDbl2,ranDbl3);//need bool to compare double
+scanf(" %lf",&userAnsw5);
+if(userAnsw5== (ranDbl2/ranDbl3)){
+    points= points+1;
+    correct++;
+
+}
+printf("%d Correct out of 5\n",correct);
+printf("%d total points\n",points);
+printf("%lf\n", (points*100.00)/10);
+}
+if((points*100.00)/10>=90){
+    printf("A\n");
+}
+else if((points*100.00)/10>=80 && (points*100.00)/10<90){
+    printf("B\n");
+}
+else if((points*100.00)/10>=70 && (points*100.00)/10<80){
+    printf("C\n");
+}
+else if((points*100.00)/10>=60 && (points*100.00)/10<70){
+    printf("D\n");
+}
+else if((points*100.00)/10>=0 && (points*100.00)/10<60)
+    printf("F\n");
+
+printf("Thanks for playing %s\n",userName);
+    
+    return 0;
+}
